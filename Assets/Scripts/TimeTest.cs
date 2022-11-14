@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeTest : MonoBehaviour
-{ 
-    public Vector3 moveDirection;
+{
+    float Zwischenzeit;
+    float Sekunde = 1;
+    float Ergebnis;
     
     void Start()
     {
-       // Debug.Log(moveDirection);
-       // Debug.Log(transform.position.x);
+        FixedUpdate();
+        Debug.Log(Ergebnis);
     }
 
     private void FixedUpdate()
     {
-        //Debug.Log(Time.deltaTime + Time.deltaTime);
+        //Debug.Log(Time.deltaTime);
+        Zwischenzeit = Time.deltaTime;
+        Ergebnis = Sekunde / Zwischenzeit;
+        
     }
 }
