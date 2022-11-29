@@ -64,14 +64,15 @@ public class Testat_3_Jump : MonoBehaviour
         }
     }
 
-    private void Move(Vector3 direction)
+    public void Move(Vector3 direction)
     {
         Vector3 velocity = moveDirection * moveSpeed;
         rb.velocity = new Vector2(velocity.x, rb.velocity.y);
     }
 
-    private void Jump()
+    public void Jump()
     {
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
         Vector2 jumpForce = new Vector2(0f, JumpForce.y);
         rb.AddForce(jumpForce, ForceMode2D.Impulse);
     }
