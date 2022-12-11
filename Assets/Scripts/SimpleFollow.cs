@@ -16,5 +16,6 @@ public class SimpleFollow : MonoBehaviour
             position.y = target.position.y;
             transform.position = position;
         }
+      
     }
 }
