@@ -397,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533578384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.8, z: 0}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -417,10 +417,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Platform: {fileID: 6159177913224572852, guid: 047129c1072c29b4ca59943d8055c839, type: 3}
-  MaxDist: 2.6
-  MinDist: 1.2
-  MaxLinks: -2.3
-  MaxRechts: 2.3
+  MaxDistance: 2.6
+  MinDistance: 1.2
+  MaxLeft: -2.15
+  MaxRight: 2.15
 --- !u!1001 &747316895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -429,9 +429,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 583168581439598885, guid: 047129c1072c29b4ca59943d8055c839, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6159177913224572852, guid: 047129c1072c29b4ca59943d8055c839, type: 3}
       propertyPath: m_Name
       value: BasicPlatform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159177913224572852, guid: 047129c1072c29b4ca59943d8055c839, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 6901743705222685132, guid: 047129c1072c29b4ca59943d8055c839, type: 3}
       propertyPath: m_RootOrder
@@ -439,15 +447,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901743705222685132, guid: 047129c1072c29b4ca59943d8055c839, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.5141
+      value: 5.692566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901743705222685132, guid: 047129c1072c29b4ca59943d8055c839, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.634158
       objectReference: {fileID: 0}
     - target: {fileID: 6901743705222685132, guid: 047129c1072c29b4ca59943d8055c839, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.59
+      value: 0.0846
       objectReference: {fileID: 0}
     - target: {fileID: 6901743705222685132, guid: 047129c1072c29b4ca59943d8055c839, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.77
+      value: -2.6785
       objectReference: {fileID: 0}
     - target: {fileID: 6901743705222685132, guid: 047129c1072c29b4ca59943d8055c839, type: 3}
       propertyPath: m_LocalPosition.z
@@ -493,8 +505,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 800657947}
-  - component: {fileID: 800657949}
   - component: {fileID: 800657948}
+  - component: {fileID: 800657949}
   m_Layer: 0
   m_Name: PlatformKiller
   m_TagString: Untagged
@@ -530,7 +542,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5601554, y: -8.365095}
+  m_Offset: {x: 0.5601554, y: -8.388046}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -541,7 +553,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.57656, y: 6.177094}
+  m_Size: {x: 12.57656, y: 0.5317602}
   m_EdgeRadius: 0
 --- !u!114 &800657949
 MonoBehaviour:
