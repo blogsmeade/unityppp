@@ -9,7 +9,7 @@ public class PlatformSpawnScript : MonoBehaviour
     private float lastSpawnPosition;
     [Header("Vertikale Abstände Platformen")]
     [SerializeField]
-    private float MaxDistance = 2.6f;
+    private float MaxDistance = 2.4f;
     [SerializeField]
     private float MinDistance = 1.2f;
     [Header("Horizontale Abstände Platformen")]

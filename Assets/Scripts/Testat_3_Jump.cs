@@ -47,10 +47,10 @@ public class Testat_3_Jump : MonoBehaviour
             moveDirection = Vector3.zero;
             Move(moveDirection);
         }
-        if(currentKeyboard.spaceKey.wasPressedThisFrame)
+      /*  if(currentKeyboard.spaceKey.wasPressedThisFrame)
         {
             wantJump = true;
-        }
+        }*/
     }
 
     private void FixedUpdate()

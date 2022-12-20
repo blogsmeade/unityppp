@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 
 public class PlayerKiller : MonoBehaviour
-{ 
+{
+    public UnityEvent onPlayerDeath;
     public int targetSceneIndex = 0;
     public string targetSceneName = "SCENE_Game";
 
@@ -13,12 +15,13 @@ public class PlayerKiller : MonoBehaviour
     {
         if (collision.CompareTag ("Player"))
         {
-            SceneManager.LoadScene(0); 
-            Debug.Log("Neu");
+            onPlayerDeath.Invoke();
+            //SceneManager.LoadScene(0); 
+            //Debug.Log("Neu");
         }
       
-    }       
-    
+    }  
+   
                
 
 
