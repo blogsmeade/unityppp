@@ -12,10 +12,13 @@ public class Testat_3_Jump : MonoBehaviour
     public bool wantJump;
     public bool left;
     public bool right;
+    private SpriteRenderer mySpriteRenderer;
+    private AudioSource jumpsound;
     // Start is called before the first frame update
     void Start()
     {
-        
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
+        jumpsound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,13 +36,17 @@ public class Testat_3_Jump : MonoBehaviour
             
             moveDirection = Vector3.right;
             Move(moveDirection);
-            
+            mySpriteRenderer.flipX = false;
+             
+
         }
         else if(currentKeyboard.aKey.isPressed || currentKeyboard.leftArrowKey.isPressed )
         {
             
             moveDirection = Vector3.left;
             Move(moveDirection);
+            mySpriteRenderer.flipX = true;
+          
             
         }
         else
@@ -75,5 +82,6 @@ public class Testat_3_Jump : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, 0f);
         Vector2 jumpForce = new Vector2(0f, JumpForce.y);
         rb.AddForce(jumpForce, ForceMode2D.Impulse);
+        jumpsound.Play();
     }
 }
