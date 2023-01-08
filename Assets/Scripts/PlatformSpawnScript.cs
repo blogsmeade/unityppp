@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlatformSpawnScript : MonoBehaviour
 {
     public GameObject Platform;
+    public GameObject PlatformRot;
+    private int PinkJellyCouter;
+    private int RandomRedJelly;
     private float SpawnDistance;
     private float lastSpawnPosition;
     [Header("Vertikale Abstände Platformen")]
@@ -22,6 +25,7 @@ public class PlatformSpawnScript : MonoBehaviour
     {
         lastSpawnPosition = transform.position.y;
         Spawn();
+        RandomRedJelly = Random.Range(4, 12);
     }
 
     // Update is called once per frame
@@ -36,8 +40,20 @@ public class PlatformSpawnScript : MonoBehaviour
     }
     private void Spawn()
     {
-        SpawnDistance = Random.Range(MinDistance, MaxDistance);
-        Instantiate(Platform, new Vector3(Random.Range(MaxRight, MaxLeft), transform.position.y, 0), Quaternion.identity);
-        lastSpawnPosition = transform.position.y;
+        if (PinkJellyCouter <= RandomRedJelly)
+        {
+            SpawnDistance = Random.Range(MinDistance, MaxDistance);
+            Instantiate(Platform, new Vector3(Random.Range(MaxRight, MaxLeft), transform.position.y, 0), Quaternion.identity);
+            lastSpawnPosition = transform.position.y;
+            PinkJellyCouter += 1;
+                 }
+        else
+        {
+            SpawnDistance = Random.Range(MinDistance, MaxDistance);
+            Instantiate(PlatformRot, new Vector3(Random.Range(MaxRight, MaxLeft), transform.position.y, 0), Quaternion.identity);
+            lastSpawnPosition = transform.position.y;
+            RandomRedJelly = Random.Range(4, 12);
+            PinkJellyCouter =0;
+        }
     }
 }

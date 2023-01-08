@@ -8,6 +8,7 @@ public class Testat_3_Jump : MonoBehaviour
     public float moveSpeed = 5f;
     public Vector3 moveDirection;
     public Vector3 JumpForce;
+    public Vector3 HighJumpForce;
     public Rigidbody2D rb;
     public bool wantJump;
     public bool left;
@@ -81,6 +82,14 @@ public class Testat_3_Jump : MonoBehaviour
     {
         rb.velocity = new Vector2(rb.velocity.x, 0f);
         Vector2 jumpForce = new Vector2(0f, JumpForce.y);
+        rb.AddForce(jumpForce, ForceMode2D.Impulse);
+        jumpsound.Play();
+    }
+
+    public void HighJump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        Vector2 jumpForce = new Vector2(0f, HighJumpForce.y);
         rb.AddForce(jumpForce, ForceMode2D.Impulse);
         jumpsound.Play();
     }
